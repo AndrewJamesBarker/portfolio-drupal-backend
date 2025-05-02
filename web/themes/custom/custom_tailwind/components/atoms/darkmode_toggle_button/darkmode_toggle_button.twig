@@ -1,15 +1,21 @@
+<div
+  id="{{ id|default('theme-toggle') }}"
+  class="relative {{ size|default('w-16 h-8') }} bg-gray-300 dark:bg-gray-700 rounded-full cursor-pointer {{ transition|default('transition duration-300') }}"
+>
+  <div
+    id="theme-thumb"
+    class="absolute {{ thumb_position|default('top-1 left-1') }} {{ thumb_size|default('w-6 h-6') }} bg-white rounded-full shadow-md {{ thumb_transition|default('transition-transform duration-300') }}"
+  ></div>
 
-<div id="{{ id }}" {{ attributes.addClass('relative', size, 'bg-gray-300', 'dark:bg-gray-700', 'rounded-full', 'cursor-pointer', transition) }}>
-  <div id="theme-thumb" class="absolute {{ thumb_position }} {{ thumb_size }} bg-white rounded-full shadow-md {{ transition }}"></div>
   <div class="icon-sun block dark:hidden">
     {% block sun %}
-      <slot name="sun" />
+      {{ slots.sun }}
     {% endblock %}
   </div>
+
   <div class="icon-moon hidden dark:block">
     {% block moon %}
-      <slot name="moon" />
+      {{ slots.moon }}
     {% endblock %}
-
   </div>
 </div>

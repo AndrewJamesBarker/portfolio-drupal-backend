@@ -1,0 +1,6 @@
+services:
+  custom_tailwind.component_library:
+    class: Drupal\Core\Template\TwigNamespace
+    arguments: ['custom_tailwind', '@theme_handler']
+    tags:
+      - { name: twig.namespace, namespace: custom_tailwind, path: components }
