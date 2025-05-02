@@ -10,6 +10,11 @@ profiles/contrib/
 web/modules/contrib/
 web/themes/contrib/
 
+# compiled js and css
+
+web/sites/default/files/css
+web/sites/default/files/js
+
 # Custom asset folders (exclude if built or downloaded)
 web/modules/custom/smart_file_icon/icons/
 
