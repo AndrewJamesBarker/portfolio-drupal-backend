@@ -1,0 +1,91 @@
+#'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+#name: Podcast Card
+#status: stable
+#description: Minimal version with just cover image and title
+#props:
+#  type: object
+#  properties:
+#    title:
+#      type: string
+#      title: Title
+#slots:
+#  cover_image:
+#    title: cover image
+#
+
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: Podcast Card
+status: stable
+description: Card for podcast episode teasers
+props:
+  type: object
+  properties:
+    nid:
+      type: number
+      title: Node ID
+    title:
+      type: string
+      title: title
+      examples: []
+    cover_image:
+      type: object
+      title: cover image
+      examples: []
+    description:
+      type: string
+      title: description
+      examples: []
+    duration:
+      type: string
+      title: duration
+      examples: []
+    episode_number:
+      type: number
+      title: episode number
+      examples: []
+    external_links:
+      type: array
+      title: external links
+      items:
+        type: string
+    guests:
+      type: array
+      title: guests
+      items:
+        type: string
+    hosts:
+      type: array
+      title: hosts
+      items:
+        type: string
+
+    publish_date:
+      type: string
+      title: publish date
+      examples: [ ]
+    topics:
+      type: array
+      title: topics
+      items:
+        type: string
+    video:
+      type: object
+      title: video
+      properties:
+        url:
+          type: string
+          title: Video URL
+        thumbnail:
+          type: string
+          title: Thumbnail image URL
+        title:
+          type: string
+          title: Video title
+
+slots:
+  summary:
+    title: summary
+  cta:
+    title: cta
+  extra_meta:
+    title: extra meta

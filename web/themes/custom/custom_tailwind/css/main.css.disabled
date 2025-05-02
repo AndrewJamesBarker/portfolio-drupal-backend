@@ -1,0 +1,26 @@
+/*@import "tailwindcss";*/
+/*@import "./base/elements.css";*/
+/*@import "./layout/layout.css";*/
+
+/*@import "./component/buttons.css";*/
+/*@import "./component/form.css";*/
+/*@import "./component/menu.css";*/
+/*@import "./component/block.css";*/
+/*@import "./component/node.css";*/
+/*@import "./component/messages.css";*/
+/*@import "./component/tabs.css";*/
+/*@import "./component/table.css";*/
+/*@import "./component/breadcrumb.css";*/
+/*@import "./component/header.css";*/
+/*@import "./component/sidebar.css";*/
+/*@import "./component/pricing-card.css";*/
+
+/*@import "./theme/print.css";*/
+
+/*!* NEW IN TAILWIND 4+ *!*/
+
+
+/*!* Tailwind core layers *!*/
+/*@tailwind base;*/
+/*@tailwind components;*/
+/*@tailwind utilities;*/

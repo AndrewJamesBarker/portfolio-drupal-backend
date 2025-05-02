@@ -1,0 +1,8 @@
+# Schema for the configuration files of the Custom Tailwind theme.
+custom_tailwind.settings:
+  type: theme_settings
+  label: 'Custom Tailwind settings'
+  mapping:
+    example:
+      type: string
+      label: Example

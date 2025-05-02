@@ -1,0 +1,27 @@
+@layer base {
+  html {
+    font-size: 16px;
+  }
+
+  body {
+    font-family: theme('fontFamily.sans');
+    color: theme('colors.gray.800');
+    background-color: theme('colors.white');
+    line-height: 1.6;
+  }
+
+  a {
+    color: theme('colors.blue.600');
+    text-decoration: underline;
+  }
+
+  a:hover {
+    color: theme('colors.blue.800');
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.25;
+    margin-bottom: 0.5em;
+  }
+}

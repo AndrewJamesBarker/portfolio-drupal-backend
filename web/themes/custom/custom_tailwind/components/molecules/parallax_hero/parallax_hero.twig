@@ -1,0 +1,30 @@
+{{ attach_library('custom_tailwind/parallax_hero') }}
+
+<div {{ attributes.addClass('relative', height_class, 'overflow-hidden', 'text-white', 'flex', 'items-center', 'justify-center') }}>
+  <div class="absolute inset-0 overflow-hidden z-0">
+  {% for layer in layers %}
+    <div class="absolute inset-0 z-{{ layer.z_index }}">
+      <img
+        src="{{ layer.src }}"
+        alt="{{ layer.alt }}"
+        class="rellax w-full h-full object-cover pointer-events-none {{ layer.class }}"
+        data-rellax-speed="{{ layer.speed }}"
+        style="transform: translateY({{ layer.start_offset|default('20%') }});"
+        {#        height="{{ layer.height }}"#}
+{#        width="{{ layer.width }}"#}
+      />
+    </div>
+  {% endfor %}
+</div>
+
+  <div class="relative z-50 text-center px-4 rellax"
+       data-rellax-speed="-1">
+    {% if title %}
+      <h2 class="text-4xl font-bold">{{ title }}</h2>
+    {% endif %}
+    {% if description %}
+      <p class="mt-2 text-lg py-2">{{ description }}</p>
+    {% endif %}
+    {% block cta %}{% endblock %}
+  </div>
+</div>

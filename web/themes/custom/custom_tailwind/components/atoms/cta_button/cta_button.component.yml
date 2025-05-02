@@ -1,0 +1,25 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: CTA Button
+status: stable
+props:
+  type: object
+  properties:
+    text:
+      type: string
+      title: text
+      # @todo Add examples here.
+      examples: []
+    url:
+      type: string
+      title: url
+      # @todo Add examples here.
+      examples: []
+    bg_colour:
+      type: string
+      title: bg-colour
+      # @todo Add examples here.
+      examples: [ ]
+    text_colour:
+      type: string
+      title: text-colour
+      examples: []

@@ -1,0 +1,28 @@
+name: Custom Tailwind
+type: theme
+base theme: stable9
+description: A foundational theme for leveraging Components, Patterns UI, and Tailwind
+package: Custom
+core_version_requirement: ^10 || ^11
+libraries:
+  - custom_tailwind/global
+regions:
+  header: 'Header'
+  primary_menu: 'Primary menu'
+  secondary_menu: 'Secondary menu'
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  featured: 'Featured'
+  breadcrumb: 'Breadcrumb'
+  content: 'Content'
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  footer: 'Footer'
+components:
+  namespaces:
+    custom_tailwind: components
+
+
+
+
+

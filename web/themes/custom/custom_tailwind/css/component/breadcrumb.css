@@ -1,0 +1,113 @@
+.breadcrumb {
+  position: relative;
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 700; /* font-bold */
+  line-height: 1.5rem; /* approximate to leading-6 */
+}
+
+.breadcrumb::after {
+  position: absolute;
+  top: 0;
+  right: -1rem;
+  width: 3rem;
+  height: 2rem;
+  content: "";
+  background: linear-gradient(to left, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+@media (min-width: 1000px) {
+  .breadcrumb::after {
+    content: none;
+  }
+
+  .breadcrumb {
+    position: static;
+  }
+}
+
+[dir="rtl"] .breadcrumb::after {
+  background: linear-gradient(to right, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.breadcrumb__content {
+  overflow: auto;
+  margin-top: -0.25rem;
+  margin-bottom: -0.25rem;
+  margin-left: -0.25rem;
+  margin-right: -1rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 0.25rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (min-width: 1000px) {
+  .breadcrumb__content {
+    margin-right: 0;
+  }
+}
+
+.breadcrumb__list {
+  overflow-x: auto;
+  width: max-content;
+  margin: 0;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  padding-top: 0;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 0;
+  list-style: none;
+  white-space: nowrap;
+}
+
+@media (min-width: 1000px) {
+  .breadcrumb__list {
+    overflow: visible;
+    width: auto;
+    margin-left: 0;
+    margin-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    white-space: normal;
+  }
+}
+
+.breadcrumb__item {
+  display: inline-block;
+}
+
+.breadcrumb__item:nth-child(n + 2)::before {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin: 0 1.125rem;
+  content: "";
+  transform: rotate(45deg);
+  border-top: 2px solid #9ca3af; /* Tailwind gray-400 */
+  border-right: 2px solid #9ca3af;
+}
+
+[dir="rtl"] .breadcrumb__item:nth-child(n + 2)::before {
+  transform: rotate(-45deg);
+}
+
+.breadcrumb__item:last-child {
+  margin-right: 3rem;
+}
+
+@media (min-width: 1000px) {
+  .breadcrumb__item:last-child {
+    margin-right: 0;
+  }
+}
+
+.breadcrumb__link {
+  text-decoration: none;
+  color: #374151; /* Tailwind gray-700 */
+}
+
+.breadcrumb__link:hover,
+.breadcrumb__link:focus {
+  text-decoration: underline;
+}

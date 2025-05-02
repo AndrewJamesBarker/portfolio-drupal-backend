@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html{{ html_attributes }}>
+<head>
+  <head-placeholder token="{{ placeholder_token }}">
+    <title>{{ head_title|safe_join(' | ') }}</title>
+    <css-placeholder token="{{ placeholder_token }}">
+      <js-placeholder token="{{ placeholder_token }}">
+</head>
+<body{{ attributes.addClass('bg-white', 'text-black', 'dark:bg-gray-900', 'dark:text-white', 'transition', 'duration-300') }}>
+<a href="#main-content" class="visually-hidden focusable">
+  {{ 'Skip to main content'|t }}
+</a>
+{{ page_top }}
+{{ page }}
+{{ page_bottom }}
+<js-bottom-placeholder token="{{ placeholder_token }}">
+</body>
+</html>

@@ -1,0 +1,64 @@
+# Composer dependencies
+/vendor/
+core/
+libraries/
+
+# Contributed code managed by Composer
+modules/contrib/
+themes/contrib/
+profiles/contrib/
+web/modules/contrib/
+web/themes/contrib/
+
+# Custom asset folders (exclude if built or downloaded)
+web/modules/custom/smart_file_icon/icons/
+
+# Environment & sensitive files
+.env
+db_backups/
+sites/*/filehashes.txt
+sites/*/backups/
+
+# Drupal-generated files & ignored settings
+sites/*/files/
+sites/*/private/
+sites/*/settings.local.php
+sites/*/settings.ddev.php
+sites/*/settings.php
+
+# Default Drupal text files
+LICENSE.txt
+README.txt
+CHANGELOG.txt
+COPYRIGHT.txt
+INSTALL*.txt
+MAINTAINERS.txt
+UPDATE.txt
+UPGRADE.txt
+
+# Patch files
+*.patch
+
+# IDE/editor files
+.idea/
+*.DS_Store
+
+# Node.js dependencies
+node_modules/
+package-lock.json
+.npmrc
+.nvmrc
+
+# Misc Drupal root files (optional, depends on your project layout)
+.ht.router.php
+.htaccess
+web.config
+robots.txt
+autoload.php
+index.php
+update.php
+README.md
+example.gitignore
+
+# Scripts or local-only utilities
+/scripts/

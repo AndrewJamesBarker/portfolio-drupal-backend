@@ -1,0 +1,15 @@
+
+<div id="{{ id }}" {{ attributes.addClass('relative', size, 'bg-gray-300', 'dark:bg-gray-700', 'rounded-full', 'cursor-pointer', transition) }}>
+  <div id="theme-thumb" class="absolute {{ thumb_position }} {{ thumb_size }} bg-white rounded-full shadow-md {{ transition }}"></div>
+  <div class="icon-sun block dark:hidden">
+    {% block sun %}
+      <slot name="sun" />
+    {% endblock %}
+  </div>
+  <div class="icon-moon hidden dark:block">
+    {% block moon %}
+      <slot name="moon" />
+    {% endblock %}
+
+  </div>
+</div>

@@ -1,0 +1,15 @@
+_core:
+  default_config_hash: ijfbzDTN4CbE7Sr-6ubWzy_t1vH4OtU1doNCLssVz-4
+langcode: en
+uuid: 4e25f5e6-2497-4302-aef2-2f4e2ca3ac60
+name: 'Andrew Barker'
+mail: admin@example.com
+slogan: 'Web Development Services '
+page:
+  403: ''
+  404: ''
+  front: /node/1
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: en
+mail_notification: null

@@ -1,0 +1,8 @@
+/* css/component/buttons.css */
+@layer components {
+  .custom-button {
+    background-color: teal;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+  }
+}

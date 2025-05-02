@@ -1,0 +1,20 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: Preview Card
+status: stable
+props:
+  type: object
+  properties:
+    title:
+      type: string
+      title: Title
+    description:
+      type: string
+      title: Description
+    image:
+      type: string
+      title: Image
+slots:
+  cta:
+    title: CTA
+  picture:
+    title: Picture

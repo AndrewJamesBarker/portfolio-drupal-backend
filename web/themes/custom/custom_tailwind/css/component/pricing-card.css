@@ -1,0 +1,13 @@
+@layer components {
+  .custom-pricing-card {
+    @apply bg-white shadow-lg rounded-xl p-6 border border-gray-200;
+  }
+
+  .custom-pricing-card h2 {
+    @apply text-xl font-semibold text-gray-800 mb-2;
+  }
+
+  .custom-pricing-card p {
+    @apply text-grey-600;
+  }
+}

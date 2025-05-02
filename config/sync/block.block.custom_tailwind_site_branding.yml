@@ -1,0 +1,25 @@
+uuid: 79dc13b6-699e-4981-9d7f-6f124b668ba7
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - custom_tailwind
+_core:
+  default_config_hash: n_nlgjggHVfQt2H__zvLOKB2YtjPDbQ5tHijF9LE1aM
+id: custom_tailwind_site_branding
+theme: custom_tailwind
+region: header
+weight: -3
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }

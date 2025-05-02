@@ -1,0 +1,49 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: Darkmode Toggle Button
+status: stable
+libraryOverrides:
+  dependencies:
+    - core/once
+props:
+  type: object
+  properties:
+    id:
+      type: string
+      title: ID
+      default: 'theme-toggle'
+      description: The HTML id for the outer container
+      # @todo Add examples here.
+      examples: []
+    size:
+      type: string
+      title: Size
+      default: 'w-16 h-8'
+      description: Tailwind sizing for the toggle container
+      # @todo Add examples here.
+      examples: []
+    thumb_size:
+      type: string
+      title: Thumb Size
+      default: 'w-6 h-6'
+      description: Tailwind sizing for the circle thumb
+      # @todo Add examples here.
+      examples: []
+    thumb_position:
+      type: string
+      title: Thumb Position
+      default: 'top-1 left-1'
+      description: Position of the thumb when not toggled
+      # @todo Add examples here.
+      examples: []
+    transition:
+      type: string
+      title: Transition
+      default: 'transition duration-300'
+      description: Animation behaviour
+slots:
+  sun:
+    title: Sun
+  moon:
+    title: Moon
+
+

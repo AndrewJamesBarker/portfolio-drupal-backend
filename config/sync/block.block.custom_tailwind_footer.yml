@@ -1,0 +1,25 @@
+uuid: 9d0620f4-c4d0-46f2-8022-e5e5feae17b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - system
+  theme:
+    - custom_tailwind
+id: custom_tailwind_footer
+theme: custom_tailwind
+region: footer
+weight: -5
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: Footer
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

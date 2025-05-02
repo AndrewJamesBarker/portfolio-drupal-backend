@@ -1,0 +1,13 @@
+{#<div {{ attributes }}>#}
+{#  {% block summary %}{% endblock %}#}
+{#  {% block cta %}{% endblock %}#}
+{#  {% block extra_meta %}{% endblock %}#}
+{#</div>#}
+
+<article {{ attributes.addClass('podcast-card') }}>
+  <div class="cover-image">
+    {{ image }}
+  </div>
+  <h2 class="text-xl font-bold">{{ title }}</h2>
+  <div class="duration">{{ duration }}</div>
+</article>

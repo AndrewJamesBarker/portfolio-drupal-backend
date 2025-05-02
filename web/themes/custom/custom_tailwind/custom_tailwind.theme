@@ -1,0 +1,32 @@
+<?php
+declare(strict_types=1);
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\contact\Entity\ContactForm;
+
+/**
+ * @file
+ * Functions to support theming in the Custom Tailwind theme.
+ */
+
+
+/**
+ * Implements hook_preprocess_HOOK() for html.html.twig.
+ */
+function custom_tailwind_preprocess_html(array &$variables): void {
+
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for page.html.twig.
+ */
+
+function custom_tailwind_preprocess_page(array &$variables) {
+}
+
+
+/**
+ * Implements hook_preprocess_HOOK() for node.html.twig.
+ */
+function custom_tailwind_preprocess_node(array &$variables): void {
+}
+

@@ -1,0 +1,23 @@
+uuid: 7d565330-c288-4ce3-9c50-66747a884361
+langcode: en
+status: false
+dependencies:
+  module:
+    - search
+  theme:
+    - custom_tailwind
+_core:
+  default_config_hash: _nZjxxdypO6xrOAJkCYD81v0L7wh2zbCAVO7_C-UKIc
+id: custom_tailwind_search_form_narrow
+theme: custom_tailwind
+region: primary_menu
+weight: -4
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form (narrow)'
+  label_display: '0'
+  provider: search
+  page_id: null
+visibility: {  }

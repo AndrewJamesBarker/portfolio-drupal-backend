@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Theme override to display a region.
+ *
+ * Available variables:
+ * - content: The content for this region, typically blocks.
+ * - attributes: HTML attributes for the region <div>.
+ * - region: The name of the region variable as defined in the theme's
+ *   .info.yml file.
+ *
+ * @see template_preprocess_region()
+ */
+#}
+{% if content %}
+  <div class="flex justify-between items-center">
+    <div class="flex items-center space-x-2">
+
+      <a href="/" rel="home">
+        <img src="/sites/default/files/Good_Logo_AJB_0.png" alt="Home" fetchpriority="high" width="65" height="65">
+      </a>
+
+      <h1 class="sr-only">
+        <a href="/" rel="home">Andrew Barker</a>
+      </h1>
+
+    </div>
+    <div id="theme-toggle" class="relative w-16 h-8 bg-gray-300 dark:bg-gray-700 rounded-full cursor-pointer transition duration-300">
+      <div id="theme-thumb" class="absolute top-1 left-1 w-6 h-6 bg-white rounded-full shadow-md transition-transform duration-300"></div>
+    </div>
+  </div>
+{% endif %}

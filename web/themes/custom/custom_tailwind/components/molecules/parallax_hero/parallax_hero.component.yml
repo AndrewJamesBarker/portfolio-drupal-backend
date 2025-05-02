@@ -1,0 +1,62 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: Parallax Hero
+status: stable
+props:
+  type: object
+  properties:
+    title:
+      type: string
+      title: Title
+      # @todo Add examples here.
+      examples: []
+    description:
+      type: string
+      title: Description
+      # @todo Add examples here.
+      examples: []
+    height_class:
+      type: string
+      title: Height Class
+      description: tailwind height class
+      # @todo Add examples here.
+      examples: []
+    layers:
+      type: array
+      title: Image layers
+      description: Parallax image layers
+      items:
+        type: object
+        properties:
+          src:
+            type: string
+            title: Image source
+          alt:
+            type: string
+            title: Alt text
+          speed:
+            type: number
+            title: Parallax speed (Rellax.js)
+            default: 0
+          z_index:
+            type: number
+            title: z-index layer
+            default: 0
+          class:
+            type: string
+            title: Additional image classes
+            default: ""
+          start_offset:
+            type: string
+            title: Translate Y offset
+            default: '20%'
+          width:
+            type: number
+          height:
+            type: number
+
+
+      # @todo Add examples here.
+      examples: []
+slots:
+  cta:
+    title: CTA
