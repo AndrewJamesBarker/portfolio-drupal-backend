@@ -57,7 +57,6 @@ robots.txt
 autoload.php
 index.php
 update.php
-README.md
 example.gitignore
 
 # Scripts or local-only utilities
