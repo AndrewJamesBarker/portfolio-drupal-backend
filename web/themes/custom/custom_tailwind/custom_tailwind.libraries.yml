@@ -38,3 +38,14 @@ parallax_hero:
     - core/drupal
     - core/once
 
+darkmode_toggle_button:
+  version: 1.x
+  js:
+    js/darkmode_toggle_button.js: {}
+  css:
+    theme:
+      css/darkmode_toggle_button.css: {}
+  dependencies:
+    - core/drupal
+    - core/once
+
