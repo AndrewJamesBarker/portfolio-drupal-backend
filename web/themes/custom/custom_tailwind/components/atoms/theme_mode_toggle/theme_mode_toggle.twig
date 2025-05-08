@@ -1,0 +1,46 @@
+<div
+  id="{{ id|default('theme-toggle') }}"
+  class="relative inline-flex bg-gray-300 dark:bg-gray-700 rounded-full px-1 py-1 {{ transition|default('transition duration-300') }}"
+  data-mode="system"
+>
+  <div
+    id="theme-thumb"
+    class="absolute px-1 top-1 {{ thumb_position|default('left-1') }} {{ thumb_size|default('w-8 h-8') }} bg-white rounded-full shadow-md z-0 transition-all duration-300 ease-in-out"
+  ></div>
+
+  <button
+    type="button"
+    data-theme="light"
+    aria-label="Use light mode"
+    aria-pressed="false"
+    class="relative z-10 p-2 focus:outline-none focus:ring-4 focus:ring-offset-2 focus:[box-shadow:0_0_8px_6px_rgba(255,225,0,0.9)] rounded-full {{ button_class|default('p-2') }}"
+  >
+      {% block sun %}
+        {{ slots.sun }}
+      {% endblock %}
+  </button>
+
+  <button
+    type="button"
+    data-theme="system"
+    aria-label="Use system theme"
+    aria-pressed="false"
+    class="relative z-10 p-2 focus:outline-none focus:ring-4 focus:ring-offset-2 focus:[box-shadow:0_0_8px_4px_rgba(0,128,0,0.9)] rounded-full {{ button_class|default('p-2') }}"
+  >
+    {% block system %}
+      {{ slots.system }}
+    {% endblock %}
+  </button>
+
+  <button
+    type="button"
+    data-theme="dark"
+    aria-label="Use dark mode"
+    aria-pressed="false"
+    class="relative z-10 p-2 focus:outline-none focus:ring-4 focus:ring-offset-2 focus:[box-shadow:0_0_8px_6px_rgba(255,225,0,0.9)] rounded-full {{ button_class|default('p-2') }}"
+  >
+    {% block moon %}
+      {{ slots.moon }}
+    {% endblock %}
+  </button>
+</div>

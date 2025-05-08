@@ -16,5 +16,4 @@ props:
 slots:
   cta:
     title: CTA
-  picture:
-    title: Picture
+

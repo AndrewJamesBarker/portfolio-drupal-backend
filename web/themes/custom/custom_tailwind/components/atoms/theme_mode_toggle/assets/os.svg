@@ -1,0 +1,10 @@
+<svg
+  viewBox="0 0 24 24"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  class="w-4 h-4"
+  aria-hidden="true"
+>
+  <title>System theme</title>
+  <path d="M17 3.34A10 10 0 1 1 2 12l.005-.324A10 10 0 0 1 17 3.34M8 5.072A8 8 0 0 0 12.001 20L12 4a8 8 0 0 0-4 1.072" fill="currentColor"/>
+</svg>
