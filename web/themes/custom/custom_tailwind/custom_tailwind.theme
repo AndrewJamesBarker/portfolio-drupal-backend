@@ -33,59 +33,52 @@ function custom_tailwind_preprocess_node(array &$variables): void {
 }
 
 /**
- * Preprocesses the Preview Card custom block.
- * Passes field data into a component-friendly props array,
- * and handles rendering of a referenced CTA block into a slot.
+ * Implements hook_preprocess_paragraph() for the different types of paragraphs.
  */
-function custom_tailwind_preprocess_block__preview_card(array &$variables): void {
-  $block = $variables['elements']['#block_content'];
+function custom_tailwind_preprocess_paragraph(&$variables): void {
+  $paragraph = $variables['paragraph'];
+  $bundle = $paragraph->bundle();
 
-  // Get the image URL from the referenced Media image.
-  $image_entity = $block->get('field_image')->entity ?? NULL;
-  $image_url = '';
-  if ($image_entity) {
-    $file_url_generator = \Drupal::service('file_url_generator');
-    $image_url = $file_url_generator->generateAbsoluteString($image_entity->getFileUri());
-  }
-
-  // Set up props for the Preview Card SDC.
-  $variables['card'] = [
-    'title' => $block->get('field_title')->value ?? '',
-    'description' => check_markup(
-      $block->get('field_description')->value,
-      $block->get('field_description')->format
-    ),
-    'image' => $image_url,
-  ];
-
-  // Render the referenced CTA Button block as a slot (if present).
-  $cta_block = $block->get('field_cta_button')->referencedEntities()[0] ?? NULL;
-  if ($cta_block) {
-    $cta_view = \Drupal::entityTypeManager()
-      ->getViewBuilder('block_content')
-      ->view($cta_block);
-    $variables['cta_slot'] = \Drupal::service('renderer')->renderRoot($cta_view);
+  switch ($bundle) {
+    case 'preview_card':
+      custom_tailwind_preprocess_preview_card($variables);
+      break;
+    case 'cta':
+      custom_tailwind_preprocess_cta($variables);
+      break;
   }
 }
 
 /**
- * Preprocesses the CTA Button custom block.
- * Converts field values into props for the CTA Button SDC.
+ * Preprocess preview_card paragraph type.
  */
-function custom_tailwind_preprocess_block__cta_button(array &$variables): void {
-  $block = $variables['elements']['#block_content'];
+function custom_tailwind_preprocess_preview_card(&$variables): void {
+  $paragraph = $variables['paragraph'];
+  $cta_paragraph = $paragraph->get('field_cta_button')->referencedEntities()[0] ?? NULL;
 
-  // Map each field into a prop expected by the component.
-  $variables['cta'] = [
-    'text' => $block->get('field_text')->value ?? '',
-    'url' => $block->get('field_url')->getUrl()->toString(),
-    'bg_colour' => $block->get('field_bg_colour')->value ?? 'bg-blue-600',
-    'text_colour' => $block->get('field_text_colour')->value ?? 'text-white',
-  ];
+  if ($cta_paragraph) {
+    $variables['cta_text'] = custom_tailwind_get_field_value($cta_paragraph, 'field_text');
+    $variables['cta_url'] = custom_tailwind_get_field_value($cta_paragraph, 'field_url');
+    $variables['extra_classes'] = custom_tailwind_get_field_value($cta_paragraph, 'field_extra_classes');
+  }
+
+  $variables['title'] = custom_tailwind_get_field_value($paragraph, 'field_title');
+  $variables['bg_image'] = custom_tailwind_get_field_value($paragraph, 'field_bg_image');
+  $variables['description'] = custom_tailwind_get_field_value($paragraph, 'field_description');
+}
+
+
+/**
+ * Preprocess cta paragraph type.
+ */
+function custom_tailwind_preprocess_cta(&$variables): void {
+  $variables['text'] = custom_tailwind_get_field_value($variables['paragraph'], 'field_text');
+  $variables['url'] = custom_tailwind_get_field_value($variables['paragraph'], 'field_url');
 }
 
 /**
- * Preprocesses the CTA Button Paragraph.
- * Converts field values into prop values for the CTA Button SDC.
+ * Helper function to get field value with a default.
  */
-function custom_tailwind_preprocess_(array &$variables): void {}
+function custom_tailwind_get_field_value($entity, $field_name, $default = '') {
+  return !$entity->get($field_name)->isEmpty() ? $entity->get($field_name)->value : $default;
+}

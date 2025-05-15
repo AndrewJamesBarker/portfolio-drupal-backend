@@ -38,6 +38,8 @@
  * @ingroup themeable
  */
 #}
+
+
 {%
   set classes = [
     'paragraph',
@@ -48,8 +50,17 @@
 %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
-    {% block content %}
-      {{ content }}
-    {% endblock %}
+    {% embed 'custom_tailwind:preview_card' with {
+      title: title,
+      description: content.field_description
+    } %}
+      {% block cta %}
+        {% include 'custom_tailwind:cta_button' with {
+          text: cta_text,
+          url: cta_url,
+          extra_classes: 'inline-flex items-center gap-2 backdrop-blur-lg bg-white/40 dark:bg-white/10 text-black dark:text-white hover:bg-white/60 dark:hover:bg-white/20 border border-black/10 dark:border-white/20 hover:border-black/20 dark:hover:border-white/40 shadow-md hover:shadow-xl transition-all duration-300 px-6 py-3 rounded-2xl font-semibold'
+        } %}
+      {% endblock %}
+    {% endembed %}
   </div>
 {% endblock paragraph %}

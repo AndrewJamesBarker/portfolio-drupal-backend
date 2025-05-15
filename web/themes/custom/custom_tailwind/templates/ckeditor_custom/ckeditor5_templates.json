@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Tech-Stack Table",
+    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M8 16h8v2H8zm0-4h8v2H8zm6-10H6c-1.1 0-2 .9-2 2v16c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z\"/></svg>",
+    "description": "Insert a simple Table.",
+    "html": "<table class='tech-stats-table'><thead><tr><th class='tech-stats-table__header'>Tool</th><th class='tech-stats-table__header'>Version</th><th class='tech-stats-table__header'>Name/Link</th></tr></thead><tbody><tr class='tech-stats-table__row'><td class='tech-stats-table__cell'>IDE</td><td class='tech-stats-table__cell'>2024.1.1</td><td class='tech-stats-table__cell'><a class='tech-stats-table__link' href='https://www.jetbrains.com/phpstorm/' target='_blank' rel='noopener noreferrer'>PHPStorm</a></td></tr><tr class='tech-stats-table__row'><td class='tech-stats-table__cell'>Container Management System</td><td class='tech-stats-table__cell'>1.7.0</td><td class='tech-stats-table__cell'><a class='tech-stats-table__link' href='https://orbstack.dev/' target='_blank' rel='noopener noreferrer'>OrbStack</a></td></tr><tr class='tech-stats-table__row'><td class='tech-stats-table__cell'>Computer</td><td class='tech-stats-table__cell'>Mac M1</td><td class='tech-stats-table__cell'><a class='tech-stats-table__link' href='https://www.apple.com/' target='_blank' rel='noopener noreferrer'>Mac M1</a></td></tr><tr class='tech-stats-table__row'><td class='tech-stats-table__cell'>OS</td><td class='tech-stats-table__cell'>14.6.1</td><td class='tech-stats-table__cell'><a class='tech-stats-table__link' href='https://www.apple.com/macos/sonoma/' target='_blank' rel='noopener noreferrer'>Mac Sonoma</a></td></tr><tr class='tech-stats-table__row'><td class='tech-stats-table__cell'>DDEV</td><td class='tech-stats-table__cell'>v1.23.3</td><td class='tech-stats-table__cell'><a class='tech-stats-table__link' href='https://ddev.com/' target='_blank' rel='noopener noreferrer'>DDEV</a></td></tr><tr class='tech-stats-table__row'><td class='tech-stats-table__cell'>Composer</td><td class='tech-stats-table__cell'>2.7.4</td><td class='tech-stats-table__cell'><a class='tech-stats-table__link' href='https://getcomposer.org/' target='_blank' rel='noopener noreferrer'>Composer</a></td></tr><tr class='tech-stats-table__row'><td class='tech-stats-table__cell'>PHP</td><td class='tech-stats-table__cell'>8.3.6</td><td class='tech-stats-table__cell'><a class='tech-stats-table__link' href='https://www.php.net/' target='_blank' rel='noopener noreferrer'>PHP</a></td></tr></tbody></table>"
+  },
+  {
+    "title": "Copy To Clipboard",
+    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M8 16h8v2H8zm0-4h8v2H8zm6-10H6c-1.1 0-2 .9-2 2v16c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z\"/></svg>",
+    "description": "Insert a copy to clipboard feature.",
+    "html": "<div class='clipboard-copy-box'><div><button class='copy-btn' type='button' aria-label='Copy code to clipboard'>Copy</button></div><pre><code class='language-plaintext user-select-all code-to-copy'>Example to sample</code></pre></div>"
+  },
+  {
+    "title": "Button",
+    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M8 16h8v2H8zm0-4h8v2H8zm6-10H6c-1.1 0-2 .9-2 2v16c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z\"/></svg>",
+    "description": "Insert a button.",
+    "html": "<p><a class='button' href='example'>Example</a></p>"
+  }
+]

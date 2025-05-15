@@ -53,10 +53,6 @@ props:
             type: number
           height:
             type: number
-
-
-      # @todo Add examples here.
-      examples: []
 slots:
   cta:
     title: CTA

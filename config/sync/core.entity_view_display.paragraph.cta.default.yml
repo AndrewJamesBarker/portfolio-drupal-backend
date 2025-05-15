@@ -1,0 +1,39 @@
+uuid: ca300fce-82f2-43be-bc5b-1d4a8b9fc902
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.cta.field_extra_classes
+    - field.field.paragraph.cta.field_text
+    - field.field.paragraph.cta.field_url
+    - paragraphs.paragraphs_type.cta
+id: paragraph.cta.default
+targetEntityType: paragraph
+bundle: cta
+mode: default
+content:
+  field_extra_classes:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_text:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_url:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

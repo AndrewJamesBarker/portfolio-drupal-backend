@@ -1,0 +1,34 @@
+uuid: 498ba307-1cfe-46ef-bddc-b3b8e1cf6360
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cta_button
+    - paragraphs.paragraphs_type.cta
+    - paragraphs.paragraphs_type.preview_card
+  module:
+    - entity_reference_revisions
+id: paragraph.preview_card.field_cta_button
+field_name: field_cta_button
+entity_type: paragraph
+bundle: preview_card
+label: 'CTA Button'
+description: 'Reference the CTA paragraph used to populate the CTA SDC'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      cta: cta
+    negate: 0
+    target_bundles_drag_drop:
+      cta:
+        weight: 3
+        enabled: true
+      preview_card:
+        weight: 4
+        enabled: false
+field_type: entity_reference_revisions

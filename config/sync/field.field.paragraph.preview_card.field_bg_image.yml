@@ -1,0 +1,19 @@
+uuid: 19cab192-e45b-441a-9740-e09ed8314acf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_bg_image
+    - paragraphs.paragraphs_type.preview_card
+id: paragraph.preview_card.field_bg_image
+field_name: field_bg_image
+entity_type: paragraph
+bundle: preview_card
+label: 'BG Image'
+description: 'String to use as a link to a background image.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

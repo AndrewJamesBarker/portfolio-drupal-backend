@@ -1,0 +1,10 @@
+uuid: 770c3b65-f1bb-462f-b569-1f8fc7f819ae
+langcode: en
+status: true
+dependencies: {  }
+id: cta
+label: CTA
+icon_uuid: null
+icon_default: null
+description: 'CTA is used to populate the CTA SDC component.'
+behavior_plugins: {  }

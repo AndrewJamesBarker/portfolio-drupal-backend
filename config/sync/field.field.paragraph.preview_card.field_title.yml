@@ -1,0 +1,19 @@
+uuid: e52f73d0-7435-4ec6-b7b8-af1336837491
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.preview_card
+id: paragraph.preview_card.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: preview_card
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

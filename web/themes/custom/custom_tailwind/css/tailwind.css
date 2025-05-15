@@ -4,6 +4,7 @@
 @import "./../components/atoms/cta_button/cta_button.css";
 /*@import "./../components/atoms/theme_mode_toggle/theme_mode_toggle.css";*/
 @import "./../components/organisms/podcast_card/podcast_card.css";
+@import "./../css/layout/layout.css";
 
 @custom-variant dark (&:where(.dark, .dark *));
 

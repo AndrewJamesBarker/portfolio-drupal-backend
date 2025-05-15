@@ -7,19 +7,12 @@ props:
     text:
       type: string
       title: text
-      # @todo Add examples here.
-      examples: []
+
     url:
       type: string
       title: url
-      # @todo Add examples here.
-      examples: []
-    bg_colour:
+
+    classes:
       type: string
-      title: bg-colour
-      # @todo Add examples here.
-      examples: [ ]
-    text_colour:
-      type: string
-      title: text-colour
-      examples: []
+      title: classes
+

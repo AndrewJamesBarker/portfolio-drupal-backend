@@ -1,0 +1,41 @@
+uuid: bec43dd3-5edf-4797-8e32-c1997166a14e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.cta.field_extra_classes
+    - field.field.paragraph.cta.field_text
+    - field.field.paragraph.cta.field_url
+    - paragraphs.paragraphs_type.cta
+id: paragraph.cta.default
+targetEntityType: paragraph
+bundle: cta
+mode: default
+content:
+  field_extra_classes:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_text:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_url:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

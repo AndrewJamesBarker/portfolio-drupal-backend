@@ -1,0 +1,19 @@
+uuid: 9350e801-444f-4102-90b7-f8255c22e23d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_url
+    - paragraphs.paragraphs_type.cta
+id: paragraph.cta.field_url
+field_name: field_url
+entity_type: paragraph
+bundle: cta
+label: URL
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

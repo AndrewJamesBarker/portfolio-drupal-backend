@@ -1,0 +1,19 @@
+uuid: 51d7e054-e3c5-495f-bd49-ba5ea9060f4d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_extra_classes
+    - paragraphs.paragraphs_type.cta
+id: paragraph.cta.field_extra_classes
+field_name: field_extra_classes
+entity_type: paragraph
+bundle: cta
+label: 'Extra Classes'
+description: 'Enter extra css classes for styling options'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

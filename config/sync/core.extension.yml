@@ -9,6 +9,7 @@ module:
   block_content: 0
   breakpoint: 0
   ckeditor5: 0
+  ckeditor5_template: 0
   comment: 0
   components: 0
   config: 0
@@ -23,10 +24,14 @@ module:
   field_ui: 0
   file: 0
   filter: 0
+  graphql: 0
   help: 0
   history: 0
   image: 0
+  layout_discovery: 0
   link: 0
+  media: 0
+  media_library: 0
   menu_link_content: 0
   menu_ui: 0
   metatag: 0
@@ -36,15 +41,25 @@ module:
   page_cache: 0
   path: 0
   path_alias: 0
+  responsive_image: 0
+  rest: 0
   search: 0
+  serialization: 0
   shortcut: 0
+  single_content_sync: 0
   system: 0
   taxonomy: 0
   text: 0
   token: 0
   toolbar: 0
   twig_tweak: 0
+  typed_data: 0
   ui_patterns: 0
+  ui_patterns_blocks: 0
+  ui_patterns_field_formatters: 0
+  ui_patterns_layouts: 0
+  ui_patterns_library: 0
+  ui_patterns_views: 0
   update: 0
   user: 0
   views_ui: 0

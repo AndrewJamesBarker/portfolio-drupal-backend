@@ -1,0 +1,10 @@
+uuid: f4117ff4-088a-4db0-9e13-a87ecfc7cd5e
+langcode: en
+status: true
+dependencies: {  }
+id: preview_card
+label: 'Preview Card'
+icon_uuid: null
+icon_default: null
+description: 'General card to use for populating the content of a corresponding Preview Card SDC and an optional CTA SDC'
+behavior_plugins: {  }

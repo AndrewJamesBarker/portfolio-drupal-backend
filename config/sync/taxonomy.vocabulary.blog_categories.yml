@@ -1,0 +1,9 @@
+uuid: 65cc3052-0740-4d0c-ac10-2279761c4b99
+langcode: en
+status: true
+dependencies: {  }
+name: 'Blog Category'
+vid: blog_categories
+description: 'Topmost sorting taxonomy for blogs.'
+weight: 0
+new_revision: false
