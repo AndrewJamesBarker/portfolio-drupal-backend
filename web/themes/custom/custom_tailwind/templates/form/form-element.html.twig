@@ -1,0 +1,49 @@
+{%
+  set classes = [
+  'mb-4',
+  'flex',
+  'flex-col',
+  'form-item',
+  'form-type-' ~ type|clean_class,
+  'form-item-' ~ name|clean_class,
+  errors ? 'text-red-600' : 'text-gray-900',
+]
+%}
+
+<div{{ attributes.addClass(classes) }}>
+  {% if label_display in ['before', 'invisible'] %}
+    {{ label }}
+  {% endif %}
+
+  {% if prefix is not empty %}
+    <span class="text-sm text-gray-500">{{ prefix }}</span>
+  {% endif %}
+
+  {% if description_display == 'before' and description.content %}
+    <div{{ description.attributes.addClass('text-sm text-gray-500 mb-1') }}>
+      {{ description.content }}
+    </div>
+  {% endif %}
+
+  {{ children }}
+
+  {% if suffix is not empty %}
+    <span class="text-sm text-gray-500">{{ suffix }}</span>
+  {% endif %}
+
+  {% if label_display == 'after' %}
+    {{ label }}
+  {% endif %}
+
+  {% if errors %}
+    <div class="text-sm text-red-600 mt-1">
+      {{ errors }}
+    </div>
+  {% endif %}
+
+  {% if description_display in ['after', 'invisible'] and description.content %}
+    <div{{ description.attributes.addClass('text-sm text-gray-500 mt-1') }}>
+      {{ description.content }}
+    </div>
+  {% endif %}
+</div>

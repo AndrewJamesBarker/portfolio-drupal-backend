@@ -8,16 +8,37 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+.front-hero-bg {
+  background-image: url('/sites/default/files/2025-05/seafloor-porthole_0.jpg');
+  background-size: cover;
+  background-position: center;
+  /*min-height: 400px;*/
+}
+#logoAJB {
+  animation: twirl 2s cubic-bezier(.11,.86,.41,1.15) forwards;
+  transform-origin: center
+}
+@keyframes twirl {
+  0% {
+    transform: rotateY(0)
+  }
+
+  to {
+    transform: rotateY(1440deg)
+  }
+}
+
 @layer base {
   :root {
     --color-background: #f1f1f1; /* Light mode background */
     --color-content: #0f172a;
-    /* etc. */
+    --color-primary: oklch(0.68 0.15 235.98);
   }
 
   .dark {
     --color-background: #1f1f1f; /* Dark mode background */
     --color-content: #f0f0f0;
+    --color-primary: oklch(0.72 0.16 235.98);
   }
 
   html {
@@ -25,11 +46,40 @@
   }
 }
 
+
 @layer utilities {
+
+  .btn {
+    @apply inline-block px-4 py-2 text-white rounded-md font-medium transition;
+    background-color: var(--color-primary);
+  }
+
+  .btn:hover {
+    background-color: oklch(0.7 0.2 235.98); /* brighter hover */
+  }
+
+  input.form-submit {
+    @apply px-4 py-2 text-white rounded-md font-medium transition;
+    background-color: var(--color-primary);
+  }
+
+  @media (hover: hover) {
+    input.form-submit:hover {
+      background-color: oklch(0.7 0.2 235.98);
+    }
+  }
+
+
+  .front-hero-bg {
+    background-image: url('/Users/andrewbarker/developer/personal/portfolio-backend-drupal/web/sites/default/files/2025-05/seafloor-porthole_0.jpg');
+    background-size: cover;
+    background-position: center;
+  }
 
   .bg-surface {
     background-color: var(--color-background);
   }
+
   .text-surface {
     color: var(--color-content);
   }
@@ -37,6 +87,7 @@
   button[data-theme="system"][aria-pressed="true"] .theme-icon-system {
     color: #000000;
   }
+
   @media (prefers-color-scheme: dark) {
     button[data-theme="system"][aria-pressed="true"] .theme-icon-system {
       color: white;
@@ -89,27 +140,25 @@
     @apply px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500;
   }
 
-  input.form-submit {
-    @apply px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition;
-  }
-
+  /*input.form-submit {*/
+  /*  @apply px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition;*/
+  /*}*/
   .podcast-cards-wrapper {
     @apply grid gap-6 place-items-center max-w-screen-xl mx-auto;
   }
 
-}
 
+  @layer components {
+    .podcast-card {
+      @apply p-4 bg-white shadow rounded;
+    }
 
-@layer components {
-  .podcast-card {
-    @apply p-4 bg-white shadow rounded;
-  }
+    .podcast-card .cover-image {
+      @apply mb-4;
+    }
 
-  .podcast-card .cover-image {
-    @apply mb-4;
-  }
-
-  .podcast-card .duration {
-    @apply text-sm text-gray-600;
+    .podcast-card .duration {
+      @apply text-sm text-gray-600;
+    }
   }
 }

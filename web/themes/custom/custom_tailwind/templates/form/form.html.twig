@@ -1,0 +1,26 @@
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+{#<form class="user-login-form shadow-md p-4 rounded">#}
+{#  {{ children }}#}
+{#</form>#}
+
+{% embed 'custom_tailwind:preview_card' with {
+  title: 'Login To Your Account',
+  description: description
+} %}
+  {% block content %}
+    <form{{ attributes.addClass('user-login-form shadow-md p-4 rounded') }}>
+      {{ children }}
+    </form>
+  {% endblock %}
+{% endembed %}

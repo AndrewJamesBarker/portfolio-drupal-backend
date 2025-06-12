@@ -16,4 +16,6 @@ props:
 slots:
   cta:
     title: CTA
+  content:
+    title: Custom Content
 
