@@ -52,10 +52,13 @@
         if (saved === 'dark' || saved === 'light') {
           setTheme(saved);
         } else {
+          // Force dark mode as default
+          setTheme('dark');
+          localStorage.setItem('theme', 'dark');
           // system default
-          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-          setTheme(prefersDark ? 'dark' : 'light');
-          localStorage.setItem('theme', 'system');
+          // const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          // setTheme(prefersDark ? 'dark' : 'light');
+          // localStorage.setItem('theme', 'system');
         }
 
         buttons.forEach((btn) => {

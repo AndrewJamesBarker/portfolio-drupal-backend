@@ -1,0 +1,14 @@
+{%
+  set classes = [
+  'block',
+  'mb-1',
+  'text-sm',
+  'font-medium',
+  'text-white',
+  title_display == 'invisible' ? 'sr-only',
+  required ? 'after:content-[\'*\'] after:ml-0.5 after:text-red-500',
+]
+%}
+{% if title is not empty or required -%}
+  <label{{ attributes.addClass(classes) }}>{{ title }}</label>
+{%- endif %}

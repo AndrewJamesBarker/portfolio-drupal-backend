@@ -64,7 +64,7 @@ function custom_tailwind_preprocess_preview_card(&$variables): void {
 
   $variables['title'] = custom_tailwind_get_field_value($paragraph, 'field_title');
   $variables['bg_image'] = custom_tailwind_get_field_value($paragraph, 'field_bg_image');
-  $variables['description'] = custom_tailwind_get_field_value($paragraph, 'field_description');
+  $variables['description'] = custom_tailwind_get_field_value($paragraph, 'field_description_formatted');
 }
 
 

@@ -18,6 +18,7 @@ regions:
   sidebar_first: 'Sidebar first'
   sidebar_second: 'Sidebar second'
   footer: 'Footer'
+  footer_bottom: 'Footer bottom'
 components:
   namespaces:
     custom_tailwind: components
