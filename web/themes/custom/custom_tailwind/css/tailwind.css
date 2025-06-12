@@ -46,7 +46,6 @@
   }
 }
 
-
 @layer utilities {
 
   .btn {
@@ -70,11 +69,7 @@
   }
 
 
-  .front-hero-bg {
-    background-image: url('/Users/andrewbarker/developer/personal/portfolio-backend-drupal/web/sites/default/files/2025-05/seafloor-porthole_0.jpg');
-    background-size: cover;
-    background-position: center;
-  }
+
 
   .bg-surface {
     background-color: var(--color-background);
