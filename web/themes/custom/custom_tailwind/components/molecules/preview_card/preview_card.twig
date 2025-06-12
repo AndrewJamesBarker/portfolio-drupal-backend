@@ -5,9 +5,11 @@
     border border-white/30 shadow-2xl
     transition-transform hover:scale-[1.02]">
   <div class="space-y-4 text-gray-100">
+    {% if title %}
     <h2 class="text-center text-3xl font-semibold text-gray-100">
       {{ title }}
     </h2>
+    {% endif %}
     <p class="text-left text-lg">
       {{ description }}
     </p>
