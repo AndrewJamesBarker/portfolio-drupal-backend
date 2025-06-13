@@ -1,0 +1,10 @@
+name: 'Portfolio Import'
+type: module
+description: 'Import icons for skills, possibly more'
+package: Custom
+core_version_requirement: ^10 || ^11
+dependencies:
+  - migrate:migrate
+  - migrate_file_to_media:migrate_file_to_media
+  - migrate_plus:migrate_plus
+  - migrate_tools:migrate_tools
