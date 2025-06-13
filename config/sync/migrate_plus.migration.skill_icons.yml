@@ -1,0 +1,33 @@
+uuid: bf50c6bf-2197-40f1-a2dc-3031a6285b77
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: '-0RfnZiz4PHbPyMBvGrzcHu6oaF6OZUKQcrgbhHh_xg'
+id: skill_icons
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: skill_icons
+label: 'Skill Icons Migration'
+source:
+  plugin: file
+  source_path: 'public://skills-icons'
+  file_extensions: png
+  recursive: true
+  id_only: false
+process:
+  name:
+    plugin: file_basename
+    source: filename
+  field_media_image:
+    plugin: file_import
+    source: uri
+    destination: 'public://skill-icons/[file:name]'
+    reuse: true
+    uid: 1
+destination:
+  plugin: 'entity:media'
+  default_bundle: image
+migration_dependencies: {  }

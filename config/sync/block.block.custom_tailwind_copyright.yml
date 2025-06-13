@@ -1,0 +1,25 @@
+uuid: 369b74c2-d468-4e01-b260-786bfb1edf78
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:ec4971b8-2afd-4813-b96c-6158cb76701e'
+  module:
+    - block_content
+  theme:
+    - custom_tailwind
+id: custom_tailwind_copyright
+theme: custom_tailwind
+region: footer_bottom
+weight: -5
+provider: null
+plugin: 'block_content:ec4971b8-2afd-4813-b96c-6158cb76701e'
+settings:
+  id: 'block_content:ec4971b8-2afd-4813-b96c-6158cb76701e'
+  label: Copyright
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

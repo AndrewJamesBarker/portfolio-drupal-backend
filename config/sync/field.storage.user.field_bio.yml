@@ -1,12 +1,12 @@
-uuid: 7576c31e-9248-4ece-b3a1-7e0f08e1a091
+uuid: f015cdb4-9a43-437a-b31a-5804907a2243
 langcode: en
 status: true
 dependencies:
   module:
-    - paragraphs
-id: paragraph.field_description
-field_name: field_description
-entity_type: paragraph
+    - user
+id: user.field_bio
+field_name: field_bio
+entity_type: user
 type: string_long
 settings:
   case_sensitive: false

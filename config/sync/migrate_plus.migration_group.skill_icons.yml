@@ -1,0 +1,12 @@
+uuid: ac772bec-c3fd-403b-9f27-f4ae2cfab3b8
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: AGjUJGVWzbXVNaLXGJX7nyWExTw6Xb42WZlsFfPdcuo
+id: skill_icons
+label: 'Skill Icons'
+description: 'Migration of skill icons to media entities'
+source_type: File
+module: null
+shared_configuration: {  }

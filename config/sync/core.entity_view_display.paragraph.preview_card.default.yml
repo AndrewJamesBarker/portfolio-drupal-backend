@@ -5,11 +5,12 @@ dependencies:
   config:
     - field.field.paragraph.preview_card.field_bg_image
     - field.field.paragraph.preview_card.field_cta_button
-    - field.field.paragraph.preview_card.field_description
+    - field.field.paragraph.preview_card.field_description_formatted
     - field.field.paragraph.preview_card.field_title
     - paragraphs.paragraphs_type.preview_card
   module:
     - entity_reference_revisions
+    - text
 id: paragraph.preview_card.default
 targetEntityType: paragraph
 bundle: preview_card
@@ -21,7 +22,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   field_cta_button:
     type: entity_reference_revisions_entity_view
@@ -30,14 +31,14 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
-  field_description:
-    type: basic_string
+  field_description_formatted:
+    type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   field_title:
     type: string

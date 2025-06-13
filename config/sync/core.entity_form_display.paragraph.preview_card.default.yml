@@ -5,11 +5,12 @@ dependencies:
   config:
     - field.field.paragraph.preview_card.field_bg_image
     - field.field.paragraph.preview_card.field_cta_button
-    - field.field.paragraph.preview_card.field_description
+    - field.field.paragraph.preview_card.field_description_formatted
     - field.field.paragraph.preview_card.field_title
     - paragraphs.paragraphs_type.preview_card
   module:
     - paragraphs
+    - text
 id: paragraph.preview_card.default
 targetEntityType: paragraph
 bundle: preview_card
@@ -17,7 +18,7 @@ mode: default
 content:
   field_bg_image:
     type: string_textfield
-    weight: 2
+    weight: 3
     region: content
     settings:
       size: 60
@@ -25,7 +26,7 @@ content:
     third_party_settings: {  }
   field_cta_button:
     type: paragraphs
-    weight: 3
+    weight: 4
     region: content
     settings:
       title: Paragraph
@@ -41,9 +42,9 @@ content:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
     third_party_settings: {  }
-  field_description:
-    type: string_textarea
-    weight: 1
+  field_description_formatted:
+    type: text_textarea
+    weight: 2
     region: content
     settings:
       rows: 5

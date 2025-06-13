@@ -34,6 +34,7 @@ settings:
       - codeBlock
       - '|'
       - sourceEditing
+      - template
   plugins:
     ckeditor5_codeBlock:
       languages:
@@ -95,6 +96,10 @@ settings:
       multiBlock: true
     ckeditor5_sourceEditing:
       allowed_tags: {  }
+    ckeditor5_template_template:
+      file_path: /themes/custom/custom_tailwind/templates/ckeditor_custom/ckeditor5_templates.json
+      custom_toolbar_text: Template
+      show_toolbar_text: 1
 image_upload:
   status: true
   scheme: public

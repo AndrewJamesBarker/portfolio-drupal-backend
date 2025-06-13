@@ -1,0 +1,22 @@
+uuid: 6b5a5f21-acb1-4590-9a96-59f9bac41e14
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_description_formatted
+    - paragraphs.paragraphs_type.preview_card
+  module:
+    - text
+id: paragraph.preview_card.field_description_formatted
+field_name: field_description_formatted
+entity_type: paragraph
+bundle: preview_card
+label: 'Description Formatted'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

@@ -28,6 +28,7 @@ settings:
       - code
       - '|'
       - sourceEditing
+      - template
   plugins:
     ckeditor5_heading:
       enabled_headings:
@@ -58,6 +59,10 @@ settings:
         - '<h4 id>'
         - '<h5 id>'
         - '<h6 id>'
+    ckeditor5_template_template:
+      file_path: /themes/custom/custom_tailwind/templates/ckeditor_custom/ckeditor5_templates.json
+      custom_toolbar_text: Template
+      show_toolbar_text: 1
 image_upload:
   status: true
   scheme: public

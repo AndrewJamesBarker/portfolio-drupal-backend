@@ -26,6 +26,8 @@
         "drupal/graphql": "^4.12",
         "drupal/metatag": "^2.1",
         "drupal/migrate_file_to_media": "^2.0",
+        "drupal/migrate_plus": "^6.0",
+        "drupal/migrate_source_csv": "^3.7",
         "drupal/paragraphs": "^1.19",
         "drupal/pathauto": "^1.13",
         "drupal/single_content_sync": "^1.4",
