@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0e0f0fabcd1f101f613d6cd7c760aa08",
+    "content-hash": "5351f0b4c627dffc7add29e5ab178522",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2461,6 +2461,57 @@
                 "source": "https://cgit.drupalcode.org/pathauto",
                 "issues": "https://www.drupal.org/project/issues/pathauto",
                 "documentation": "https://www.drupal.org/docs/8/modules/pathauto"
+            }
+        },
+        {
+            "name": "drupal/pb_import",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/pb_import.git",
+                "reference": "1.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/pb_import-1.0.0.zip",
+                "reference": "1.0.0",
+                "shasum": "b4665ba266e434601c622470ffbf456cad043ca6"
+            },
+            "require": {
+                "drupal/core": "^10 || ^11",
+                "drupal/entity_reference_revisions": "*",
+                "drupal/paragraphs": "*"
+            },
+            "require-dev": {
+                "drupal/paragraphs_bundles": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.0",
+                    "datestamp": "1722737112",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Alaa Haddad (alaahaddad.com)",
+                    "homepage": "https://www.drupal.org/u/flashwebcenter",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "A module to import content and create nodes/paragraphs from a CSV file.",
+            "homepage": "https://drupal.org/project/pb_import",
+            "support": {
+                "source": "https://git.drupalcode.org/project/pb_import",
+                "issues": "https://drupal.org/project/issues/pb_import"
             }
         },
         {
