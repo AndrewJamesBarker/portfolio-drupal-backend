@@ -726,7 +726,8 @@ $settings['file_private_path'] = '../private';
 /**
  * Load services definition file.
  */
-$settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
+//$settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
+$settings['container_yamls'][] = __DIR__ . '/services.yml';
 
 /**
  * Override the default service container class.
@@ -908,3 +909,15 @@ if (getenv('IS_DDEV_PROJECT') == 'true' && file_exists(__DIR__ . '/settings.ddev
 # if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
+
+$local_settings = __DIR__ . '/settings.local.php';
+if (file_exists($local_settings)) { include $local_settings; }
+
+$env_settings = __DIR__ . '/settings.env.php';
+if (file_exists($env_settings)) { include $env_settings; }
+
+$settings['config_sync_directory'] = dirname(DRUPAL_ROOT) . '/config/sync';
+
+$settings['trusted_host_patterns'] = [
+  '^cms\.andrewjbarker\.com$',
+];
