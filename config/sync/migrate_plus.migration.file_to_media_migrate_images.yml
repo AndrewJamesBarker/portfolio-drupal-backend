@@ -1,0 +1,28 @@
+id: file_to_media_migrate_images
+label: images_migrate
+migration_tags:
+  - custom
+
+source:
+  plugin: content_entity:file
+  constants:
+    media_bundle: image
+
+process:
+  bundle:
+    plugin: default_value
+    default_value: image
+
+  name: filename
+
+  field_media_image/target_id: fid
+
+
+
+#  field_media_image/alt:
+#    plugin: get
+#    source: filename
+
+destination:
+  plugin: 'entity:media'
+  configuration: {}
