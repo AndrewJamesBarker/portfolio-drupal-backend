@@ -919,6 +919,8 @@ if (getenv('DDEV_PROJECT')) {
   if (file_exists($ddev_settings)) {
     include $ddev_settings;
   }
+  $settings['trusted_host_patterns'] = ['.*'];
+
 }
 else {
   // Non-DDEV: load env-based settings.
@@ -926,10 +928,10 @@ else {
   if (file_exists($env_settings)) {
     include $env_settings;
   }
+  $settings['trusted_host_patterns'] = [
+    '^cms\.andrewjbarker\.com$',
+  ];
 }
 
 $settings['config_sync_directory'] = dirname(DRUPAL_ROOT) . '/config/sync';
 
-$settings['trusted_host_patterns'] = [
-  '^cms\.andrewjbarker\.com$',
-];
