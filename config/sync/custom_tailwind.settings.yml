@@ -1,7 +1,9 @@
 _core:
   default_config_hash: cteYTFHsidc-jJ8t9bxaGGe-7bRbvOMIH9vWxWm977k
 favicon:
-  use_default: true
+  mimetype: image/png
+  path: 'public://Good_Logo_AJB_1.png'
+  use_default: false
 features:
   comment_user_picture: true
   comment_user_verification: true
