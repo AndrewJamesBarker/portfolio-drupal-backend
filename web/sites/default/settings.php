@@ -623,7 +623,7 @@ $settings['update_free_access'] = FALSE;
  * See https://www.drupal.org/documentation/modules/file for more information
  * about securing private files.
  */
-$settings['file_private_path'] = '../private';
+//$settings['file_private_path'] = '../private';
 
 /**
  * Temporary file path:
@@ -913,8 +913,20 @@ if (getenv('IS_DDEV_PROJECT') == 'true' && file_exists(__DIR__ . '/settings.ddev
 $local_settings = __DIR__ . '/settings.local.php';
 if (file_exists($local_settings)) { include $local_settings; }
 
-$env_settings = __DIR__ . '/settings.env.php';
-if (file_exists($env_settings)) { include $env_settings; }
+// DDEV: only load in DDEV environment.
+if (getenv('DDEV_PROJECT')) {
+  $ddev_settings = __DIR__ . '/settings.ddev.php';
+  if (file_exists($ddev_settings)) {
+    include $ddev_settings;
+  }
+}
+else {
+  // Non-DDEV: load env-based settings.
+  $env_settings = __DIR__ . '/settings.env.php';
+  if (file_exists($env_settings)) {
+    include $env_settings;
+  }
+}
 
 $settings['config_sync_directory'] = dirname(DRUPAL_ROOT) . '/config/sync';
 
