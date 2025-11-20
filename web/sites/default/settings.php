@@ -90,18 +90,18 @@
  * ];
  * @endcode
  */
-$databases = [];
-
-$databases['default']['default'] = [
-  'database' => 'db',
-  'username' => 'db',
-  'password' => 'db',
-  'host' => 'db',
-  'port' => '3306',
-  'driver' => 'mysql',
-  'prefix' => '',
-  'collation' => 'utf8mb4_general_ci',
-];
+//$databases = [];
+//
+//$databases['default']['default'] = [
+//  'database' => 'db',
+//  'username' => 'db',
+//  'password' => 'db',
+//  'host' => 'db',
+//  'port' => '3306',
+//  'driver' => 'mysql',
+//  'prefix' => '',
+//  'collation' => 'utf8mb4_general_ci',
+//];
 
 /**
  * Customizing database settings.
@@ -920,7 +920,6 @@ if (getenv('DDEV_PROJECT')) {
     include $ddev_settings;
   }
   $settings['trusted_host_patterns'] = ['.*'];
-
 }
 else {
   // Non-DDEV: load env-based settings.
@@ -928,9 +927,16 @@ else {
   if (file_exists($env_settings)) {
     include $env_settings;
   }
+
+  // Normal web requests must match your domain.
   $settings['trusted_host_patterns'] = [
     '^cms\.andrewjbarker\.com$',
   ];
+
+  // But for CLI (Drush), relax this so it can bootstrap.
+  if (PHP_SAPI === 'cli') {
+    $settings['trusted_host_patterns'] = ['.*'];
+  }
 }
 
 $settings['config_sync_directory'] = dirname(DRUPAL_ROOT) . '/config/sync';
