@@ -45,3 +45,10 @@ This is a **personal/pet project** that serves as:
 ## 📬 Contact
 
 Feel free to explore or reach out via [my portfolio](https://abarksbytes.com) or [LinkedIn](https://www.linkedin.com/in/andrew-james-barker/).
+
+
+## Todo
+
+Add about page link, use the bio card that appears on login.
+
+Add Socials bar similar to the one on frontend.
