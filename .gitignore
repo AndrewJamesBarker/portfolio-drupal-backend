@@ -25,6 +25,10 @@ sites/*/filehashes.txt
 sites/*/backups/
 
 # Drupal-generated files & ignored settings
+# Drupal public files directory inside web docroot
+web/sites/*/files/
+web/sites/*/private/
+
 sites/*/files/
 sites/*/private/
 sites/*/settings.local.php
