@@ -55,13 +55,15 @@
       description: description
     } %}
       {% block cta %}
-        {% include 'custom_tailwind:cta_button' with {
-          text: cta_text,
-          url: cta_url,
-          extra_classes: 'inline-flex items-center gap-2 backdrop-blur-lg bg-white/10 text-white
-          hover:bg-white/20 border border-white/20 hover:border-white/40 shadow-md hover:shadow-xl
-          transition-all duration-300 px-6 py-3 rounded-2xl font-semibold'
-        } %}
+        {% if cta_text and cta_url %}
+          {% include 'custom_tailwind:cta_button' with {
+            text: cta_text,
+            url: cta_url,
+            extra_classes: 'inline-flex items-center gap-2 backdrop-blur-lg bg-white/10 text-white
+            hover:bg-white/20 border border-white/20 hover:border-white/40 shadow-md hover:shadow-xl
+            transition-all duration-300 px-6 py-3 rounded-2xl font-semibold'
+          } %}
+        {% endif %}
       {% endblock %}
     {% endembed %}
   </div>
