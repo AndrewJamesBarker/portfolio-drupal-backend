@@ -41,11 +41,12 @@ dark:from-black dark:via-gray-700 dark:to-black dark:text-white">
 
   {% if page.footer %}
     <footer role="contentinfo" class="layout--full-width bg-gradient-to-r from-sky-400 to-sky-400 via-sky-100 text-black
-      dark:from-black dark:via-gray-700 dark:to-black dark:text-white min-h-66 site-container flex flex-col justify-between h-full py-6">
-      <div class="grow">
+      dark:from-black dark:via-gray-700 dark:to-black dark:text-white min-h-66 site-container flex flex-col h-full py-6">
+      <div class="flex-grow"></div>
+      <div>
         {{ page.footer }}
       </div>
-      <div class="mt-auto">
+      <div>
         {{ page.footer_bottom }}
       </div>
     </footer>
