@@ -8,7 +8,7 @@ _core:
   default_config_hash: Q9_2whdOj1YIomfvsIfopROW4FT_X5pY0DjdOiOaQ5U
 id: custom_tailwind_primary_admin_actions
 theme: custom_tailwind
-region: footer
+region: footer_bottom
 weight: -5
 provider: null
 plugin: local_actions_block

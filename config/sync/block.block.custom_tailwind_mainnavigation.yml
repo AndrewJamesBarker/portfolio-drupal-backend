@@ -1,6 +1,6 @@
-uuid: 1cd468f2-73ba-4726-9e78-44b586521258
+uuid: 0f526d84-5f7b-4156-bfd1-444c1ec5ed60
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - system.menu.main
@@ -8,11 +8,9 @@ dependencies:
     - system
   theme:
     - custom_tailwind
-_core:
-  default_config_hash: KWAiziL39uEzmOJEql_wbUP2RtqGceL3WM2CfxhMelE
-id: custom_tailwind_main_menu
+id: custom_tailwind_mainnavigation
 theme: custom_tailwind
-region: header
+region: primary_menu
 weight: -5
 provider: null
 plugin: 'system_menu_block:main'
@@ -22,6 +20,6 @@ settings:
   label_display: '0'
   provider: system
   level: 1
-  depth: 2
-  expand_all_items: true
+  depth: null
+  expand_all_items: false
 visibility: {  }

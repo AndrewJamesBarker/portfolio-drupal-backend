@@ -11,7 +11,7 @@ _core:
 id: custom_tailwind_site_branding
 theme: custom_tailwind
 region: header
-weight: -3
+weight: -6
 provider: null
 plugin: system_branding_block
 settings:

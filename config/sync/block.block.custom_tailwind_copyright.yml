@@ -11,7 +11,7 @@ dependencies:
 id: custom_tailwind_copyright
 theme: custom_tailwind
 region: footer_bottom
-weight: -5
+weight: -4
 provider: null
 plugin: 'block_content:ec4971b8-2afd-4813-b96c-6158cb76701e'
 settings:
