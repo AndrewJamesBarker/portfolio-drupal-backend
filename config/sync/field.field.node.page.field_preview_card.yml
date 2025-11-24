@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_preview_card
     - node.type.page
+    - paragraphs.paragraphs_type.cta
     - paragraphs.paragraphs_type.preview_card
   module:
     - entity_reference_revisions
@@ -22,12 +23,13 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
+      cta: cta
       preview_card: preview_card
     negate: 0
     target_bundles_drag_drop:
       cta:
         weight: 3
-        enabled: false
+        enabled: true
       preview_card:
         weight: 4
         enabled: true
