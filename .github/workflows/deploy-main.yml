@@ -14,17 +14,25 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup SSH
+        env:
+          HOST: ${{ secrets.LIGHTSAIL_HOST }}
+          USER: ${{ secrets.LIGHTSAIL_USER }}
+          KEY: ${{ secrets.LIGHTSAIL_SSH_KEY }}
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.LIGHTSAIL_SSH_KEY }}" > ~/.ssh/id_ed25519
+
+          echo "$KEY" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
-          printf "Host lightsail
-  HostName %s
-  User %s
+
+          cat > ~/.ssh/config <<EOF
+  Host lightsail
+  HostName $HOST
+  User $USER
   IdentityFile ~/.ssh/id_ed25519
   StrictHostKeyChecking no
-  " \
-            "${{ secrets.LIGHTSAIL_HOST }}" "${{ secrets.LIGHTSAIL_USER }}" > ~/.ssh/config
+  EOF
+
+  chmod 600 ~/.ssh/config
 
 - name: Sync code to Lightsail temp dir
   run: |
