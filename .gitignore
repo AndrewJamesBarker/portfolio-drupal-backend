@@ -71,7 +71,6 @@ example.gitignore
 # Scripts or local-only utilities
 /scripts/
 
-tailwind.output.css
 
 private
 
