@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      # - dev   # uncomment if you also want deploys from dev
 
 jobs:
   deploy:
@@ -15,41 +16,40 @@ jobs:
 
       - name: Setup SSH
         env:
-          HOST: ${{ secrets.LIGHTSAIL_HOST }}
-          USER: ${{ secrets.LIGHTSAIL_USER }}
-          KEY: ${{ secrets.LIGHTSAIL_SSH_KEY }}
+          LIGHTSAIL_SSH_KEY: ${{ secrets.LIGHTSAIL_SSH_KEY }}
+          LIGHTSAIL_HOST: ${{ secrets.LIGHTSAIL_HOST }}
+          LIGHTSAIL_USER: ${{ secrets.LIGHTSAIL_USER }}
         run: |
           mkdir -p ~/.ssh
 
-          echo "$KEY" > ~/.ssh/id_ed25519
+          echo "$LIGHTSAIL_SSH_KEY" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
 
-          cat > ~/.ssh/config <<EOF
-  Host lightsail
-  HostName $HOST
-  User $USER
-  IdentityFile ~/.ssh/id_ed25519
-  StrictHostKeyChecking no
-  EOF
+          # Write SSH config for the 'lightsail' host
+          echo "Host lightsail" > ~/.ssh/config
+          echo "  HostName $LIGHTSAIL_HOST" >> ~/.ssh/config
+          echo "  User $LIGHTSAIL_USER" >> ~/.ssh/config
+          echo "  IdentityFile ~/.ssh/id_ed25519" >> ~/.ssh/config
+          echo "  StrictHostKeyChecking no" >> ~/.ssh/config
 
-  chmod 600 ~/.ssh/config
+          chmod 600 ~/.ssh/config
 
-- name: Sync code to Lightsail temp dir
-  run: |
-    rsync -az --delete \
-      --exclude='.git' \
-      --exclude='.github' \
-      --exclude='.ddev' \
-      --exclude='.idea' \
-      --exclude='db_backups' \
-      --exclude='node_modules' \
-      --exclude='vendor' \
-      --exclude='.DS_Store' \
-      --exclude='*/.DS_Store' \
-      --exclude='.editorconfig' \
-      --exclude='private' \
-      ./ lightsail:/tmp/deploy_src/
+      - name: Sync code to Lightsail temp dir
+        run: |
+          rsync -az --delete \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='.ddev' \
+            --exclude='.idea' \
+            --exclude='db_backups' \
+            --exclude='node_modules' \
+            --exclude='vendor' \
+            --exclude='.DS_Store' \
+            --exclude='*/.DS_Store' \
+            --exclude='.editorconfig' \
+            --exclude='private' \
+            ./ lightsail:/tmp/deploy_src/
 
-- name: Run deploy script on Lightsail
-  run: |
-    ssh lightsail "bash /var/www/portfolio-backend-drupal/deploy.sh"
+      - name: Run deploy script on Lightsail
+        run: |
+          ssh lightsail "bash /var/www/portfolio-backend-drupal/deploy.sh"
