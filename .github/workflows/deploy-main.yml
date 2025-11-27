@@ -1,0 +1,47 @@
+name: Deploy to Lightsail (main)
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.LIGHTSAIL_SSH_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          printf "Host lightsail
+  HostName %s
+  User %s
+  IdentityFile ~/.ssh/id_ed25519
+  StrictHostKeyChecking no
+  " \
+            "${{ secrets.LIGHTSAIL_HOST }}" "${{ secrets.LIGHTSAIL_USER }}" > ~/.ssh/config
+
+- name: Sync code to Lightsail temp dir
+  run: |
+    rsync -az --delete \
+      --exclude='.git' \
+      --exclude='.github' \
+      --exclude='.ddev' \
+      --exclude='.idea' \
+      --exclude='db_backups' \
+      --exclude='node_modules' \
+      --exclude='vendor' \
+      --exclude='.DS_Store' \
+      --exclude='*/.DS_Store' \
+      --exclude='.editorconfig' \
+      --exclude='private' \
+      ./ lightsail:/tmp/deploy_src/
+
+- name: Run deploy script on Lightsail
+  run: |
+    ssh lightsail "bash /var/www/portfolio-backend-drupal/deploy.sh"
