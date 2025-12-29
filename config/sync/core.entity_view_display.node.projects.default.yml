@@ -5,9 +5,11 @@ dependencies:
   config:
     - field.field.node.projects.field_description
     - field.field.node.projects.field_project_image
+    - field.field.node.projects.field_project_link
     - field.field.node.projects.field_title
     - node.type.projects
   module:
+    - link
     - user
 id: node.projects.default
 targetEntityType: node
@@ -29,6 +31,18 @@ content:
       link: false
     third_party_settings: {  }
     weight: 103
+    region: content
+  field_project_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 104
     region: content
   field_title:
     type: string

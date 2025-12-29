@@ -5,9 +5,11 @@ dependencies:
   config:
     - field.field.node.projects.field_description
     - field.field.node.projects.field_project_image
+    - field.field.node.projects.field_project_link
     - field.field.node.projects.field_title
     - node.type.projects
   module:
+    - link
     - media_library
     - path
 id: node.projects.default
@@ -35,6 +37,14 @@ content:
     region: content
     settings:
       media_types: {  }
+    third_party_settings: {  }
+  field_project_link:
+    type: link_default
+    weight: 124
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
     third_party_settings: {  }
   field_title:
     type: string_textfield
