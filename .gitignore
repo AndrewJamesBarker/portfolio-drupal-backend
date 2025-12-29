@@ -74,4 +74,6 @@ example.gitignore
 
 private
 
+AI-Prompts/*
+
 
