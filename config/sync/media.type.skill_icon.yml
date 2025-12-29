@@ -1,0 +1,15 @@
+uuid: e380e262-e47d-4e5d-b4cc-0ef332cbe6ed
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 4rkEFEl7HMnE4nCb1nCbN15y-NzfFlBZomKFzk4f0YQ
+id: skill_icon
+label: 'Skill Icon'
+description: 'Media type for skill icons'
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_image
+field_map: {  }

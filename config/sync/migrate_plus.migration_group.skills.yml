@@ -1,0 +1,10 @@
+uuid: 776b153b-a092-4510-b60f-64b2bc353bf9
+langcode: en
+status: true
+dependencies: {  }
+id: skills
+label: skills
+description: ''
+source_type: null
+module: null
+shared_configuration: null

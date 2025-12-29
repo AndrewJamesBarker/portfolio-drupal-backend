@@ -1,0 +1,11 @@
+uuid: cd6930c7-3923-44ae-87a8-3c5833bc74d2
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: pkAHi9K1TaWFb2d5oJvsInewHzlYBuwkE3nJg5ygR8o
+name: Skills
+vid: skills
+description: 'Skills and technologies taxonomy'
+weight: 0
+new_revision: false

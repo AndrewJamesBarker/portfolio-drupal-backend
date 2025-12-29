@@ -1,0 +1,22 @@
+uuid: 765a7f5d-a5e0-47f9-82cb-b9050299d81d
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - taxonomy
+_core:
+  default_config_hash: 8dNVIZyprrz40C9gkxtZStToO3q4VEnAdDpF-c-q3eU
+id: taxonomy_term.field_skill_icon
+field_name: field_skill_icon
+entity_type: taxonomy_term
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
