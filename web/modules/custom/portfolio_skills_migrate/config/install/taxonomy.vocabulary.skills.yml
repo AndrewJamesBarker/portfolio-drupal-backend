@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: Skills
+vid: skills
+description: 'Skills and technologies taxonomy'
+weight: 0

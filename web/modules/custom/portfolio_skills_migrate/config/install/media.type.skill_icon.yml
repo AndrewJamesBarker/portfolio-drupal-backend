@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies: {  }
+id: skill_icon
+label: 'Skill Icon'
+description: 'Media type for skill icons'
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_image
+field_map: {  }
