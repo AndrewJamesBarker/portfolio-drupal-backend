@@ -29,10 +29,19 @@ class SkillsIconsDirectory extends SourcePluginBase {
     $directory = $this->configuration['directory'];
     $extensions = $this->configuration['file_extensions'] ?? [];
 
-    $realpath = StreamWrapperManager::getTarget($directory);
+    // Get the real filesystem path.
+    /** @var \Drupal\Core\StreamWrapper\StreamWrapperManagerInterface $stream_wrapper_manager */
+    $stream_wrapper_manager = \Drupal::service('stream_wrapper_manager');
+    $stream_wrapper = $stream_wrapper_manager->getViaUri($directory);
+    
+    if (!$stream_wrapper) {
+      throw new \InvalidArgumentException("Invalid stream wrapper URI: {$directory}");
+    }
+    
+    $realpath = $stream_wrapper->realpath();
 
     if (!is_dir($realpath)) {
-      throw new \InvalidArgumentException("Directory not found: {$directory}");
+      throw new \InvalidArgumentException("Directory not found: {$directory} (resolved to: {$realpath})");
     }
 
     $rows = [];
@@ -47,9 +56,16 @@ class SkillsIconsDirectory extends SourcePluginBase {
         continue;
       }
 
+      // Derive skill_key and label from filename.
+      $base = explode('.', $file)[0];
+      $skill_key = strtolower($base);
+      $label = ucfirst($base);
+
       $rows[] = [
         'filename' => $file,
         'uri' => $directory . '/' . $file,
+        'skill_key' => $skill_key,
+        'label' => $label,
       ];
     }
 
@@ -60,15 +76,7 @@ class SkillsIconsDirectory extends SourcePluginBase {
    * {@inheritdoc}
    */
   public function prepareRow(Row $row) {
-    $filename = $row->getSourceProperty('filename');
-    $base = explode('.', $filename)[0];
-
-    $skill_key = strtolower($base);
-    $label = ucfirst($base);
-
-    $row->setSourceProperty('skill_key', $skill_key);
-    $row->setSourceProperty('label', $label);
-
+    // All processing is done in initializeIterator() since skill_key is the ID.
     return parent::prepareRow($row);
   }
 
