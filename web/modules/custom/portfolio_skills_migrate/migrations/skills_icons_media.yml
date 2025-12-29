@@ -1,0 +1,29 @@
+id: skills_icons_media
+label: 'Skill icons → Media'
+migration_group: skills
+
+source:
+  plugin: skills_icons_directory
+  directory: 'public://skills-icons'
+  file_extensions:
+    - png
+    - jpg
+    - jpeg
+    - svg
+
+destination:
+  plugin: 'entity:media'
+  default_bundle: skill_icon
+
+process:
+  name: label
+
+  field_media_image/target_id:
+    plugin: file_import
+    source: uri
+    reuse: true
+
+  field_media_image/alt: label
+
+migration_tags:
+  - skills

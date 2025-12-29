@@ -1,0 +1,32 @@
+id: skills_terms
+label: 'Skill icons → Skills taxonomy'
+migration_group: skills
+
+source:
+  plugin: skills_icons_directory
+  directory: 'public://skills-icons'
+  file_extensions:
+    - png
+    - jpg
+    - jpeg
+    - svg
+
+destination:
+  plugin: 'entity:taxonomy_term'
+  default_bundle: skills
+
+process:
+  name: label
+
+  field_skill_icon/target_id:
+    plugin: migration_lookup
+    migration: skills_icons_media
+    source: skill_key
+
+dependencies:
+  enforced:
+    migration:
+      - skills_icons_media
+
+migration_tags:
+  - skills
