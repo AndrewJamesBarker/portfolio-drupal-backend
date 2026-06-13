@@ -8,7 +8,7 @@
 .breadcrumb::after {
   position: absolute;
   top: 0;
-  right: -1.1rem;
+  right: -1rem;
   width: 3rem;
   height: 2rem;
   content: "";
