@@ -44,6 +44,7 @@ jobs:
             --exclude='db_backups' \
             --exclude='node_modules' \
             --exclude='vendor' \
+            --exclude='web/sites/default/files' \
             --exclude='.DS_Store' \
             --exclude='*/.DS_Store' \
             --exclude='.editorconfig' \
