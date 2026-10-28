@@ -7,13 +7,12 @@ props:
     title:
       type: string
       title: Title
-    description:
-      type: string
-      title: Description
     image:
       type: string
       title: Image
 slots:
+  description:
+    title: Description
   cta:
     title: CTA
   content:

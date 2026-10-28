@@ -52,7 +52,7 @@
   <div{{ attributes.addClass(classes) }}>
     {% embed 'custom_tailwind:preview_card' with {
       title: title,
-      description: description
+      description: content.field_description_formatted
     } %}
       {% block cta %}
         {% if cta_text and cta_url %}

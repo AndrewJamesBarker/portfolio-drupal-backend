@@ -10,9 +10,11 @@
       {{ title }}
     </h2>
     {% endif %}
-    <p class="text-left text-lg">
+    {% if description %}
+    <div class="text-left text-lg">
       {{ description }}
-    </p>
+    </div>
+    {% endif %}
     {% block content %}
     {% endblock %}
     <div class="text-center">
